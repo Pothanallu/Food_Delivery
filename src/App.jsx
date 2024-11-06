@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { HashRouter,Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./components/navbar"; // Import Navbar component
 import RestaurantList from "./components/RestaurantList";
 import FeaturedDishes from "./components/FeaturedDishes";
@@ -36,6 +36,7 @@ const App = () => {
       />
 
       {/* Routes */}
+      <HashRouter>
       <Routes>
         {/* Redirect root to /home */}
         <Route path="/" element={<Navigate to="/home" />} />
@@ -57,6 +58,7 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+        </HashRouter>
     </div>
   );
 };
